@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "xtr1common": "cpp",
+        "xutility": "cpp",
+        "cstring": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp",
+        "utility": "cpp",
+        "ios": "cpp",
+        "iomanip": "cpp",
+        "xiosbase": "cpp",
+        "iostream": "cpp",
+        "climits": "cpp",
+        "limits": "cpp",
+        "deque": "cpp"
+    }
+}
