@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -31,7 +33,7 @@ void Merge(int *array, int p, int q, int r){
             i = i + 1;
         }
         else{
-            array[k] = R[i];
+            array[k] = R[j];
             j = j + 1;
         }
         k = k + 1;
@@ -46,19 +48,25 @@ void Merge(int *array, int p, int q, int r){
         j = j + 1;
         k = k + 1;
     }
+    delete [] L;
+    delete [] R;
 }
 
 void MergeSort(int *array, int p, int r){
-    if (p < r){
-        int q = (p + r) / 2;
-        MergeSort(array, p, q);
-        MergeSort(array, q+1, r);
-        Merge(array, p, q, r);
-    }
+    if (p >= r)
+        return;
+    int q = (p + r) / 2;
+    MergeSort(array, p, q);
+    MergeSort(array, q+1, r);
+    Merge(array, p, q, r);
 }
 
 int main(){
+    srand(time(0));
     int array[10] = {2,5,1,6,4,8,7,3,9,0};
+    for (int i=0; i<10; i++){
+        array[i] = rand() % 10;
+    }
     MergeSort(array, 0, 10);
     PrintContainer<int [10]>(array);
     return 0;
